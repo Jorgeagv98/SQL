@@ -1,0 +1,24 @@
+DROP DATABASE IF EXISTS Ventas;
+CREATE DATABASE IF NOT EXISTS Ventas;
+USE Ventas;
+
+CREATE TABLE Ventas_2020(
+    ID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Día INT NOT NULL,
+    Mes INT NOT NULL,
+    Año INT NOT NULL,
+    Producto VARCHAR(25) NOT NULL,
+    Valor_MXN INT NOT NULL
+);
+
+INSERT INTO Ventas_2020(Día, Mes, Año, Producto, Valor_MXN)
+VALUES(1, 2, 1998, "Bocina", 528),
+      (12, 4, 2004, "Auriculares", 240),
+      (14, 8, 2016, "Auriculares", 315),
+      (16, 10, 2019, "Bocina", 1050),
+      (21, 12, 2020, "Bocina", 680);
+
+SELECT * FROM Ventas_2020;
+
+SELECT Producto FROM Ventas_2020  WHERE Producto = "Bocina" AND Valor_MXN > 600 AND Año >= 2019;
+SELECT AVG (Valor_MXN) FROM Ventas_2020 WHERE Producto = "Auriculares" AND Año >=2010;
