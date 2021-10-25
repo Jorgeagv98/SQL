@@ -1,0 +1,36 @@
+Cuando queremos ver el primer registro de la bses de datos
+
+SELECT *
+FROM platzi.alumnos
+FETCH FIRST 1 ROW ONLY
+
+SELECT *
+FROM platzi.alumnos
+LIMIT 1;
+
+SELECT *
+FROM (
+	SELECT ROW_NUMBER() OVER() AS row_id, *
+	FROM platzi.alumnos
+) AS alumnos_wit_row_num
+WHERE row-id = 1             # Esta la podemos cambiar segun los registros que queremos ver
+;
+
+Como reto queremos traer los 10 primeros datos
+SELECT *
+FROM platzi.alumnos AS alumnos
+FETCH FIRST 10 ROW ONLY 
+SELECT *
+FROM (
+	SELECT ROW_NUMBER() OVER() AS row_id, *
+	FROM platzi.alumnos
+) 	AS alumnos
+WHERE row_id <=10
+
+SELECT *
+FROM (
+	SELECT ROW_NUMBER() OVER() AS row_id, *
+	FROM platzi.alumnos
+) 	AS alumnos
+WHERE row_id BETWEEN 1 AND 5
+	
