@@ -1,0 +1,13 @@
+Ordena los datos segun los criterios que yo quiera
+
+SELECT * 
+FROM tabla_diaria;
+ORDER BY fecha; ==== Me ordena en forma ascendente
+\
+SELECT * 
+FROM tabla_diaria;
+ORDER BY fecha ASC; ==== Me ordena en forma ascendente
+\
+SELECT * 
+FROM tabla_diaria;
+ORDER BY fecha DESC; ==== Me ordena en forma descendente
