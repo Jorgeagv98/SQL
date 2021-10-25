@@ -1,0 +1,29 @@
+SELECT AVG(precio)
+FROM Tabla_marcas
+GROUP BY marca;
+
+SELECT *
+FROM tabla_diaria
+GROUP BY marca, modelo;
+
+SELECT CA.carrera
+  FROM PRUEBAS.ALUMNOS AL JOIN PRUEBAS.CARRERAS CA 
+   ON AL.CARRERA_ID = CA.ID
+GROUP BY ca.carrera; 
+
+SELECT CA.carrera, 
+	   AL.colegiatura
+  FROM PRUEBAS.ALUMNOS AL JOIN PRUEBAS.CARRERAS CA 
+  ON AL.CARRERA_ID = CA.ID
+GROUP BY al.colegiatura, ca.carrera; 
+
+LIMIT = Limita el query 
+
+SELECT *
+  FROM PRUEBAS.ALUMNOS
+ LIMIT 10;
+
+ SELECT *
+  FROM PRUEBAS.ALUMNOS
+OFFSET 5                    Despues de los 5 me devuelve los siguientes 10  
+ LIMIT 10;
