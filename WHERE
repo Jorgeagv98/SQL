@@ -1,0 +1,69 @@
+Seleccion de datos.
+
+SELECT *
+FROM tabla_diaria
+WHERE id = 1;
+
+SELECT *
+FROM tabla_diaria
+WHERE  cantidad > 10;
+
+SELECT *
+FROM tabla_diaria
+WHERE cantidad < 100;
+
+Cuando las condiciones se cumplan seran esos datos los que nos muestre SQL.
+
+SELECT * 
+FROM tabla_diaria
+WHERE cantidad > 10
+  AND cantidad < 100:
+  
+SELECT * 
+FROM tabla_diaria
+WHERE cantidad BETWEEN 10
+  AND 100;
+  
+SELECT *
+FROM users
+WHERE name = 'Jorge'
+  AND(                               
+    lastname = 'Gonzalez'
+    OR
+    lastname = 'Vargas'
+  );
+  
+SELECT * 
+FROM users
+WHERE name = 'Jorge'
+  AND lastname = 'Gonzalez'
+  OR lastname = 'Vargas'
+  
+ Operador LIKE nos sirve cuando queremos que busque un string parecido a lo queramos
+ 
+ SELECT *
+ FROM users
+ WHERE name LIKE 'JO%';   == Nos va traer todos los nombre que empiecen con Jo
+ 
+  SELECT *
+ FROM users
+ WHERE name LIKE 'Is_ael';   == Es un comodin y nos trae solo los nombres de Israel o Ismael, aquellos nombres en los que varie la letra del esapcio 
+ 
+ SELECT * 
+ FROM users
+ WHERE name NOT LIKE 'Is_ael'; Niega la anetior nos va trear  todos los nombres excepto los parecidos, ejemplo aca va traer Jorge
+ 
+ Operador NULL
+ 
+ SELECT *
+ FROM users
+ WHERE name IS NULL;
+ 
+ SELECT *
+ FROM users
+ WHERE name IS NOT NULL;
+ 
+ SELECT *
+ FROM users
+ WHERE name IN ('Jorge', 'Andres, 'Ana') Nos va traer todos los nombres del grupo
+  
