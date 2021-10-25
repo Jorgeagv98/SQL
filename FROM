@@ -1,0 +1,13 @@
+FROM
+De donde voy a obtener la informacion
+
+SELECT *
+FROM tabla_diaria; == Fuente de datos.
+
+SELECT * 
+FROM tabla_diaria AS td
+  JOIN tabla_mensual AS tm        JOIN, complemtno al from, nos ayuda para hacer tablas mas complejas
+  ON td.pk = tm.fk;   
+
+
+ 
