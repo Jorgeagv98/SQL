@@ -1,0 +1,29 @@
+SQL Select es el comando que elejimos que queremos que se muestre en las columnas.
+
+Select *; == Selecciona todas las columnas
+
+Supongamos la siguiente consulta:  
+
+select *Columna1, Columna2, Columna3* from *table_1* where ***n=3***;
+
+SELECT campo AS alias; Se puede renombrar la columna con algo que tengas mmas sentido para nosotros
+
+SELECT COUNT(id), SUM(quantity), AVG(age);
+Cuenta # de elementos, SUM cada uno de los valores, AVG promedio de la columna
+
+MAXIMOS Y MINIMOS 
+SELECT MIN(date), MAX(quantity)
+
+CONDICIONES IF
+Función que evalúa una sola expresión y retorna lo que se le especifica en el caso que sea Verdadera o Falsa
+SELECT IF(500 <  1000, 'YES', 'NO'); 
+
+CONDICIONES WHEN
+Sirve para evaluar una lista de condiciones y retornar uno o múltiples posibles resultados.
+SELECT OrderID, Quantity,
+CASE
+    WHEN Quantity > 30 THEN 'Over 30'
+    WHEN Quantity = 30 THEN 'Equal 30'
+    ELSE 'Under 30'
+END AS QuantityText
+
