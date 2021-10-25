@@ -1,0 +1,24 @@
+Productos cartesianos 
+
+Tipos:
+
+Left Join:
+Nos interesan datos que esten en A inluso si estan en B
+
+Right Join:
+Nos interesan datos que esten en B incluso si estan en A
+
+Exclusive Left Join:
+Solo nos interesan los datos en A
+
+Exclusive Left Join:
+Solo nos interesan los datos en B
+
+Full Outer Join  
+Nos trae todos los datos en A y B, multiplicandolos. Hay que tener cuidado y rara vez lo utilizamos
+
+Exclusive Full Outer Join  
+Nos trae todos los datos en A y B menos los que tienen en comun.
+
+Inner Join
+Nos trae solo los elementos que estan en comun en ambas tablas.
