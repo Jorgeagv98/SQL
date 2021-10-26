@@ -1,0 +1,9 @@
+SELECT *
+FROM platzi.alumnos
+WHERE id IN(
+	SELECT ID
+	FROM platzi.alumnos
+	WHERE colegiatura = (SELECT MAX(colegiatura) FROM platzi.alumnos)
+	AND tutor_id = 12
+	AND apellido IS NOT NULL
+)
