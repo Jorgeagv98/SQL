@@ -1,0 +1,14 @@
+SELECT *
+FROM(
+	SELECT ROW_NUMBER() OVER()  AS row_id, *
+	FROM platzi.alumnos
+) AS alumnos_with_row_num
+WHERE row_id IN (1,2,5,8,10,13); ### Primera forma de obtener ciertos datos
+
+SELECT *
+FROM platzi.alumnos
+WHERE id IN(
+	SELECT Id                     ### Este permite realizar el poceso del ejemplo anterior pero caundo no sab-
+	FROM platzi.alumnos               emos exactamente el ID sino cuando queremos traer un conjunto con una caracteridstica semejante
+	WHERE tutor_id = 30
+);
