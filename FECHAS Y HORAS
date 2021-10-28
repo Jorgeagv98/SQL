@@ -1,0 +1,10 @@
+#extraer parte de un campo
+SELECT EXTRACT(YEAR FROM fecha_incorporacion) AS yearincoporacion
+from platzi.alumnos
+
+#Otras formas
+SELECT DATE_PART('YEAR', fecha_incorporacion) AS yearincorporacion,
+	
+	   DATE_PART('MONTH', fecha_incorporacion) AS monthincorporacion,
+	   DATE_PART('DAY', fecha_incorporacion) AS dayincorporacion
+from platzi.alumnos
