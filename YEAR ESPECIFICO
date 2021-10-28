@@ -1,0 +1,21 @@
+SELECT *
+FROM platzi.alumnos
+WHERE (EXTRACT(YEAR FROM fecha_incorporacion)) = 2020 AND (EXTRACT(MONTH FROM fecha_incorporacion)) = 5
+
+SELECT * 
+FROM(
+	SELECT *,
+		DATE_PART('YEAR', fecha_incorporacion) AS year_inco
+	FROM platzi.alumnos
+) AS year_inco
+WHERE year_inco = 2020
+
+SELECT * 
+FROM(
+	SELECT *,
+		DATE_PART('YEAR', fecha_incorporacion) AS year_inco,
+		DATE_PART('MONTH', fecha_incorporacion) AS mes_inco
+	FROM platzi.alumnos
+) AS year_inco
+WHERE year_inco = 2020
+	AND mes_inco = 5
