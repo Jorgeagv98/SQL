@@ -1,0 +1,36 @@
+insert into platzi.alumnos (id, nombre, apellido, email, colegiatura, fecha_incorporacion, carrera_id, tutor_id) values (1001, 'Pamelina', null, 'pmylchreestrr@salon.com', 4800, '2020-04-26 10:18:51', 12, 16);
+
+SELECT (
+		platzi.alumnos.nombre,
+		platzi.alumnos.apellido,
+		platzi.alumnos.email,
+		platzi.alumnos.colegiatura,
+		platzi.alumnos.carrera_id,
+		platzi.alumnos.fecha_incorporacion
+	   )::text, COUNT(*)
+FROM platzi.alumnos 
+GROup BY platzi.alumnos.nombre,
+		platzi.alumnos.apellido,
+		platzi.alumnos.email,
+		platzi.alumnos.colegiatura,
+		platzi.alumnos.carrera_id,
+		platzi.alumnos.fecha_incorporacion
+HAVING COUNT(*) > 1
+
+##########################
+
+SELECT *
+FROM(
+	SELECT id,
+	ROW_NUMBER() OVER(
+		PARTITION BY
+		nombre,
+		apellido,
+		email,
+		fecha_incorporacion	
+		ORDER BY id ASC
+	) AS row,
+	*
+	FROM platzi.alumnos
+) AS duplicados
+WHERE duplicados.row > 1
