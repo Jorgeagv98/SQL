@@ -27,3 +27,7 @@ SELECT *
   FROM PRUEBAS.ALUMNOS
 OFFSET 5                    Despues de los 5 me devuelve los siguientes 10  
  LIMIT 10;
+ ######
+SELECT *
+FROM platzi.alumnos
+WHERE tutor_id BETWEEN 1 AND 10
