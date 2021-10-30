@@ -1,0 +1,30 @@
+SELECT *
+FROM platzi.alumnos
+WHERE int4range(10,20) @> tutor_id
+
+Los tipos de rango que vienen en PostgreSQL son:
+
+int4range: Que trae un rango de enteros.
+
+int8range: Es un rango de enteros grandes.
+
+numrange: Es un rango numérico.
+
+tsrange: Es un rango del tipo timestamp pero sin la zona horaria.
+
+tstzrange: Es un rango del tipo timestamp con la zona horaria
+
+daterange: Es un rango del tipo fecha.
+
+### Numeros en comun de columnas
+
+SELECT INT4RANGE(MIN(tutor_id), MAX(tutor_id)) * INT4RANGE(MIN(carrera_id), MAX(carrera_id))
+    FROM platzi.alumnos;
+    
+SELECT numrange(
+	(SELECT MIN(tutor_id) FROM platzi.alumnos),
+	(SELECT MAX(tutor_id) FROM platzi.alumnos)
+) * numrange(
+	(SELECT MIN(carrera_id) FROM platzi.alumnos),
+	(SELECT MAX(carrera_id) FROM platzi.alumnos)
+)
