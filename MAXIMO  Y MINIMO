@@ -1,0 +1,10 @@
+SELECT fecha_incorporacion
+FROM platzi.alumnos
+ORDER BY fecha_incorporacion DESC
+LIMIT 1
+
+##### VALOR MAXIMO DE FECHAS DE CADA UNO DE LAS CARRERRAS####
+SELECT MAX(fecha_incorporacion), carrera_id
+FROM platzi.alumnos
+GROUP BY carrera_id
+ORDER BY carrera_id
