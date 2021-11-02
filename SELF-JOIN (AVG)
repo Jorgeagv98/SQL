@@ -1,0 +1,27 @@
+######## Nos permite hacer un Join de varias columnas, ademas realizamos un pequeno orderBy
+
+SELECT CONCAT(a.nombre, ' ', a.apellido) AS alumno,
+	   CONCAT(t.nombre, ' ', t.apellido) AS tutor
+
+FROM platzi.alumnos as a
+	INNER JOIN platzi.alumnos as t ON a.tutor_id = t.id
+	ORDER BY tutor ASC
+  
+  ###### Una nueva concatenacion que nos permite agrupar por tutor y contar
+  
+ SELECT CONCAT(t.nombre, ' ', t.apellido) AS tutor,
+	   COUNT(*) AS alumnos_tutor
+
+FROM platzi.alumnos as a
+	INNER JOIN platzi.alumnos as t ON a.tutor_id = t.id
+GROUP BY tutor
+ORDER BY alumnos_tutor DESC
+
+SELECT AVG(dc.tutor_por_carrera)
+FROM(
+	-- seleciona cuantas tutorias realiza en una carrera--
+SELECT 	CONCAT(t.nombre,' ',	t.apellido) AS tutor,
+		COUNT(*) AS tutor_por_carrera,
+		a.carrera_id
+FROM platzi.alumnos AS a
+	INNER JOIN platzi.alumnos AS t ON a.tutor_id=t.id 
