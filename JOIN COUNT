@@ -1,0 +1,9 @@
+SELECT 
+    COUNT(c.id) AS cantidad ,
+		c.carrera
+FROM 	platzi.alumnos AS a
+	LEFT JOIN platzi.carreras AS c 
+	ON a.carrera_id = c.id
+WHERE c.id IS NOT NULL
+GROUP BY c.carrera
+ORDER BY cantidad
