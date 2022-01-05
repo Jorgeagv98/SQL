@@ -1,0 +1,8 @@
+Solo los valores que se encuentren en las dos tablas
+
+Select 
+From Orders as O
+Inner Join Customers as C
+ON O.CustomerId = C.CustomerID
+
+Lo anetrior nos va traer todos los datos con el customer ID igual en las dos tablas
