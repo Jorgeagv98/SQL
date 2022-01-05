@@ -1,0 +1,11 @@
+Select 
+From Tabla
+Where Country IN (Mexico, Germany)
+
+Lo anterior permite que el código no se rompa, si acá hicieramos un AND no va corre
+
+Mostrar la tabla de CLIENTES donde el PAIS sea Alemania, Francia y Mexico.
+
+Select *
+From Clientes
+Where Country in (Alemaina, Francia, Mexico)
