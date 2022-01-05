@@ -1,0 +1,15 @@
+Nos permite realizar la consulta de una columna de todos los datos que aparecen en ella sin que se repitan
+
+Ejemplo:
+
+Select 
+Country             
+From Customer                          
+
+Lo anterior nos va traer todos los paises de cada uno de los clientes
+
+Select
+Distinct Country
+from Customer
+
+Lo anetrior nos va mostrar los paises de la BD sin repetición
