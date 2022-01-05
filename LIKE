@@ -1,0 +1,14 @@
+Este operador sirve para filtrar info, está dentro de la clausula Where
+
+Select
+Nombre
+Apellido
+From Clientes
+Where Apellido Like G%
+
+Lo anterior nos va traer todos los apellidos que emmpiecen con la letra G, puedo realizar más AND OR NOT, puedo jugar con el % para buscar especifico
+Ej 
+%er% Nos va traer todos los apellidos que en alguna posición se encuentren estas dos letras
+
+Mostrar la tabla de CLIENTES donde su NOMBRE empieza con “a”.
+Select * fro clientes where nombre like a%
