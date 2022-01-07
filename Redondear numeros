@@ -1,0 +1,3 @@
+Select
+Round(Sum(Price), n ) n = n[umero de decimales que queremos
+From Tabla
