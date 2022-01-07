@@ -1,0 +1,12 @@
+Tenemos dos tablas
+
+       A                     B
+Empleado   Edad     Empleado   Deporte
+1           25      1          Soccer 
+2           24      2           Bei
+3           23      3           NBA
+4           26      6           aros
+5           27
+
+Left Join : Va unir todos los datos de la tabla A que encuentre en la tabla B de acuerdo al ID + los datos de A que no se encuentre en B
+Right Join : Va unir todos los datos de la tabla B que encuentre en la tabla A de acuerdo al ID + los datos de B que no se encuentre en A
